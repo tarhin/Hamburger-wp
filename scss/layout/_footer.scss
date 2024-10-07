@@ -1,0 +1,45 @@
+@use '../foundation/color' as *;
+@use '../foundation/base' as *;
+@use '../foundation/mixin' as *;
+
+.l-footer {
+  height: 15rem;
+  background: url('../img/footer-image-sp.png') center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: per(70, 150);
+
+  p {
+    color: white;
+    text-align: center;
+    font-family: "M PLUS 1p";
+  }
+}
+
+.p-shop-information {
+  font-size: 1.8rem;
+}
+
+.p-copyright {
+  font-size: 1.4rem;
+}
+
+@include breakpoint(tablet) {
+
+  .l-footer {
+    background: url('../img/footer-image.png') center / cover no-repeat;
+    gap: per(44, 150);
+  }
+}
+
+@include breakpoint(pc) {
+  .l-footer {
+    gap: per(31, 150);
+
+    .p-shop-information {
+      font-size: 2rem;
+      // padding-top: 4.1rem;
+    }
+  }
+}

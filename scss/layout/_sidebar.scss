@@ -1,0 +1,221 @@
+@use '../foundation/color' as *;
+@use '../foundation/base' as *;
+@use '../foundation/mixin' as *;
+
+.p-sp-menu-background {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s, opacity .3s;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.p-sp-menu-background.show {
+  visibility: visible;
+  opacity: .6;
+}
+
+.p-sp-menu-background::after {
+  content: "";
+  width: 100%;
+  height: 271.6rem;
+  display: block;
+}
+
+.p-sp-menu-background::-webkit-scrollbar {
+  display: none;
+}
+
+.l-sidebar {
+  position: absolute;
+  z-index: 200;
+  top:0;
+  right: -(per(328 ,375));
+  width: per(328 ,375);
+  background: $color--lightGray;
+  height: 100vh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  transition: right .3s;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  ul {
+    list-style-type: none;
+  }
+
+  h3 {
+    font-family: "Roboto";
+    font-family: bold;
+    color: $color--gray;
+    display: none;
+  }
+}
+
+.l-sidebar.show {
+  right: 0;
+}
+
+.l-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.c-sidebar-contents {
+  padding-left: per(46, 375);
+  overflow: hidden;
+
+  .p-menu-close {
+    position: relative;
+    width: per(36, 375);
+    height: 3.6rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-top: per(8, 375);
+    margin-right: per(11, 375);
+  }
+
+  .p-menu-close::before,
+  .p-menu-close::after {
+    content: '';
+    position: absolute;
+    background-color: $color--gray;
+    width: per(45.25, 36);
+    height: .6rem;
+    transform-origin: center;
+    top: per(16, 36);
+    right: 0;
+  }
+
+  .p-menu-close::before {
+    transform: rotate(45deg);
+  }
+
+  .p-menu-close::after {
+    transform: rotate(135deg);
+  }
+
+  h4 {
+    font-family: "M PLUS 1p";
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: $color--gray;
+    margin: per(40, 375) 0;
+  }
+
+  h4:nth-of-type(1) {
+    margin-top: per(134, 375);
+  }
+
+  ul {
+    margin-left: per(20, 375);
+    li {
+      font-family: "M PLUS 1p";
+      font-size: 2rem;
+      font-weight: 400;
+      color: $color--gray;
+      padding-bottom: per(20, 375);
+    }
+  }
+
+  ul:last-child {
+    padding-bottom: 50rem;
+  }
+}
+
+@include breakpoint(tablet) {
+
+  .l-sidebar {
+    right: -(per(367 ,834));
+    width: per(367 ,834);
+    // min-height: 182.6rem;
+  }
+
+  .c-sidebar-contents {
+    padding-left: per(46, 367);
+
+    .p-menu-close {
+      width: per(32, 367);
+      height: 3.7rem;
+      margin-top: per(20, 367);
+      margin-right: per(25, 367);
+    }
+
+    .p-menu-close::before,
+    .p-menu-close::after {
+      width: per(45.25, 32);
+      top: per(16, 32);
+      right: 0;
+    }
+
+    h4 {
+      margin: per(48, 367) 0 per(32, 367);
+    }
+
+    h4:nth-of-type(1) {
+      margin-top: per(121, 367);
+    }
+  }
+}
+
+@include breakpoint(pc) {
+  .l-sidebar {
+    grid-area: sidebar;
+    position: static;
+    z-index: auto;
+    top: auto;
+    right: auto;
+    transition-property: none;
+    width: 100%;
+    min-height: 284.3rem;
+    height: auto;
+  
+    h3 {
+      display: block;
+      font-size: 3.4rem;
+      line-height: 21.5rem;
+    }
+  }
+
+  .l-sidebar.archive {
+    min-height: 245.5rem;
+  }
+  
+  .c-sidebar-contents {
+    padding-left: per(46, 368)
+    h4 {
+      font-size: 2.4rem;
+      margin: per(35, 368) 0;
+    }
+
+    h4:nth-of-type(1) {
+      margin-top: 0;
+    }
+
+    ul {
+      margin-left: per(20, 368);
+      li {
+        font-family: "M PLUS 1p";
+        font-size: 2rem;
+        font-weight: 400;
+        color: $color--gray;
+        padding-bottom: per(20, 368);
+      }
+    }
+  }
+
+  .p-sp-menu-background {
+    display: none;
+  }
+
+  .p-menu-close {
+    display: none;
+  }
+}

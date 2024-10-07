@@ -1,0 +1,77 @@
+@use "../../foundation/base" as *;
+@use "../../foundation/color" as *;
+@use "../../foundation/mixin" as *;
+
+.p-search-box {
+  width: per(318, 375);
+  height: 4.6rem;
+  display: flex;
+  justify-content: space-between;
+
+  input, button {
+    height: inherit;
+  }
+
+  input {
+    width: per(216, 318);
+    border: 1px solid $color--gray;
+    border-radius: 1rem .8rem 1rem 1rem;
+    background: #FFF;
+    background-image: url(../img/mainvisual-search.png);
+    background-size: 2.4rem;
+    background-position: .5rem center;
+    background-repeat: no-repeat;
+    padding-left: per(40, 318);
+  }
+
+  input[type="text"] {
+    font-size: 1.6rem;
+  }
+
+  .p-button.search {
+    width: per(90, 318);
+  }
+}
+
+.p-button {
+  font-family: "M PLUS 1p";
+  font-weight: bold;
+  font-size: 1.6rem;
+  background: linear-gradient(to right, $color--lightGray, $color--midiumGray);
+  color: $color--gray;
+  border: 1px solid $color--gray;
+  border-radius: 1rem;
+}
+
+@include breakpoint(tablet) {
+  .p-search-box {
+    width: per(546, 834);
+
+    input {
+      width: per(396, 546);
+      background-position: 1.2rem center;
+      padding-left: per(50, 546)
+    }
+
+    .p-button.search {
+      width: per(136, 546);
+    }
+  }
+}
+
+@include breakpoint(pc) {
+  .p-search-box {
+    width: per(546, 1553);
+    margin-right: per(31, 1553);
+  
+    input {
+      width: per(396, 546);
+      background-position: 1.1rem center;
+      border-radius: 1rem;
+    }
+  
+    .p-button.search {
+      width: per(136, 546);
+    }
+  }
+}

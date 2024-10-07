@@ -1,0 +1,43 @@
+@use '../foundation/mixin' as *;
+// 関数宣言
+
+@function vw($x) {
+  @return calc(($x / 1920px) * 100 * 1vw);
+}
+
+@function per($a, $b) {
+  @return calc($a / $b * 100%);
+}
+
+html {
+  font-size: calc(10 / 375 * 100vw);
+
+  @include breakpoint(tablet) {
+    font-size: calc(10 / 834 * 100vw);
+  }
+
+  @include breakpoint(pc) {
+    font-size: calc(10 / 1920 * 100vw);
+  }
+}
+
+body {
+  width: 100%;
+  background-color: #FFFDFA;
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(pc) {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "header sidebar"
+      "main sidebar";
+    grid-template-columns: per(1553, 1920) 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}

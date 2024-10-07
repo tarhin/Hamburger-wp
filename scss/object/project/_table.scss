@@ -1,0 +1,49 @@
+@use '../../foundation/base' as *;
+@use '../../foundation/color' as *;
+@use '../../foundation/mixin' as *;
+
+table.p-single-table {
+  width: 33.5rem;
+  margin-top: 3rem;
+  border-collapse: collapse;
+  color: $color--darkGray;
+  background-color: white;
+  font-size: 1.6rem;
+  font-family: "M PLUS 1p";
+
+  td {
+    border: .1rem solid $color--gray;
+    height: 7.7rem;
+    padding-left: 2.3rem;
+  }
+
+  td:nth-of-type(1) {
+    width: 14rem;
+  }
+}
+
+@include breakpoint(tablet) {
+  table.p-single-table {
+    width: 71.4rem;
+    margin-top: 6rem;
+  
+    td {
+      padding-left: 3rem;
+    }
+  
+    td:nth-of-type(1) {
+      width: 21.5rem;
+    }
+  }
+}
+
+@include breakpoint(pc) {
+  table.p-single-table {
+    width: 135.3rem;
+    margin-top: 5rem;
+
+    td:nth-of-type(1) {
+      width: 42.9rem;
+    }
+  }
+}

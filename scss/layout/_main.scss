@@ -1,0 +1,532 @@
+@use '../foundation/color' as *;
+@use '../foundation/base' as *;
+@use '../foundation/mixin' as *;
+
+.p-main-title {
+  width: 100%;
+  height: 28.5rem;
+  background-image: url(../img/mainvisual-sp.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    color: white;
+    font-family: "M PLUS 1p";
+    font-size: 3.6rem;
+    margin-left: per(25, 375);
+  }
+}
+
+.p-main-title.archive {
+  background-image: url(../img/archive-three-burger-sp.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 28.5rem;
+
+  h2 {
+    font-family: "Roboto";
+    font-size: 3.6rem;
+    width: 17rem;
+    margin-left: per(37, 375);
+  }
+
+  p {
+    font-family: "M PLUS 1p";
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    width: 11.2rem;
+    margin-top: 1.2rem;
+    margin-left: 3.7rem;
+  }
+}
+
+.p-main-title-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.p-burger-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .p-burger-information-text {
+    width: per(335, 375);
+    font-family: "M PLUS 1p";
+    color: $color--darkGray;
+    padding-top: per(32, 375);
+
+    h3 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.p-main-title.single {
+  background: url(../img/single-cheeseburger-sp.jpg) center / cover;
+  height: 22.5rem;
+
+  h1 {
+    font-family: "M PLUS 1p";
+    font-size: 3.6rem;
+    margin-left: 2.6rem;
+    color: white;
+  }
+}
+
+.p-single-main-contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .p-main-headline {
+    font-family: "M PLUS 1p";
+    color: $color--darkGray;
+
+    h2 {
+      font-size: 2.8rem;
+      margin-top: 3.4rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      width: 33.5rem;
+      margin-top: 2.5rem;
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      margin-top: 3.6rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: 2rem;
+    }
+
+    h4 {
+      margin-top: 2.8rem;
+    }
+
+    h5 {
+      margin-top: 3.4rem;
+    }
+
+    h6 {
+      margin-top: 2.7rem;
+    }
+  }
+
+  article {
+    width: 33.5rem;
+  }
+
+  article > img {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .p-single-contents {
+    display: flex;
+    margin-top: 3rem;
+
+    img {
+      width: 14.4rem;
+      height: 8.9rem;
+    }
+
+    p {
+      width: 18.3rem;
+      color: $color--darkGray;
+      margin-left: 1rem;
+      font-family: "M PLUS 1p";
+      font-size: 1.6rem;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .p-single-contents:nth-of-type(2) {
+    flex-direction: row-reverse;
+
+    p {
+      margin: 0;
+      margin-right: 1rem;
+    }
+  }
+
+  img.p-single-image-center {
+    width: 26.7rem;
+    height: 16.6rem;
+    margin-top: 3rem;
+  }
+
+  .p-single-list {
+    width: 33.5rem;
+    margin-top: 3.3rem;
+
+    ol,
+    ul {
+      font-family: "M PLUS 1p";
+      font-size: 1.6rem;
+      color: $color--darkGray;
+      list-style-position: inside
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    ol:nth-of-type(2),
+    ul:nth-of-type(2) {
+      margin: 1.7rem 0 1.7rem 1.8rem;
+    }
+
+    ul:nth-of-type(1) {
+      margin-top: 5.7rem;
+    }
+  }
+
+  .p-single-button-wrapper {
+    width: 33.5rem;
+    margin-top: 6rem;
+  }
+
+  .p-button.single {
+    width: 33.5rem;
+    padding: 2.9rem 0 2.8rem;
+    color: $color--darkGray;
+    border-radius: 2rem;
+  }
+
+  .p-single-bold {
+    width: 33.5rem;
+    color: $color--darkGray;
+    font-family: "M PLUS 1p";
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 3.1rem;
+    margin-bottom: 6.9rem;
+  }
+}
+
+// page.html
+
+.p-main-title.single {
+  background: url(../img/page-shop-about-sp.jpg) center / cover;
+  height: 22.5rem;
+
+  h1 {
+    font-family: "M PLUS 1p";
+    font-size: 3.6rem;
+    margin-left: 4.5rem;
+    color: white;
+  }
+}
+
+@include breakpoint(tablet) {
+  .p-main-title {
+    background-image: url(../img/mainvisual-pc.jpg);
+
+    h2 {
+      margin-left: per(86, 834);
+    }
+  }
+
+  .p-main-title.archive {
+    background-image: url(../img/archive-humburger-tablet.jpg);
+
+    h2 {
+      font-size: 6rem;
+      width: 17rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-left: 1.9rem;
+      padding-top: 1rem;
+    }
+  }
+
+  .p-main-title.search {
+
+    h2 {
+      width: 20rem;
+    }
+  }
+
+  .p-main-title-bg {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .p-burger-information {
+
+    .p-burger-information-text {
+      width: per(757, 834);
+      padding-top: per(39, 834);
+
+      h3 {
+        font-size: 3.6rem;
+      }
+
+      p {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  // single.html
+
+  .p-main-title.single {
+    background: url(../img/single-cheeseburger.jpg) center / cover;
+    height: 50.5rem;
+
+    h1 {
+      font-size: 6rem;
+      margin-left: 8.6rem;
+    }
+  }
+
+  .p-single-main-contents-wrapper {
+
+    .p-main-headline {
+
+      h2 {
+        font-size: 3.6rem;
+        margin-top: 6rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        width: 71.4rem;
+        margin-top: 5.5rem;
+      }
+
+      h3 {
+        font-size: 2.8rem;
+        margin-top: 6.3rem;
+      }
+
+      h4 {
+        margin-top: 5.6rem;
+      }
+
+      h5 {
+        margin-top: 7.3rem;
+      }
+
+      h6 {
+        margin-top: 5.7rem;
+      }
+    }
+
+    article {
+      width: 71.4rem;
+    }
+
+    article > img {
+      margin-top: 6rem;
+    }
+
+    .p-single-contents {
+      margin-top: 6rem;
+
+      img {
+        width: 30.6rem;
+        height: 18.9rem;
+      }
+
+      p {
+        width: 38.7rem;
+        margin-left: 2.1rem;
+
+        span {
+          display: inline;
+        }
+      }
+    }
+
+    .p-single-contents:nth-of-type(2) {
+
+      p {
+        margin: 0;
+        margin-right: 2.1rem;
+      }
+    }
+
+    img.p-single-image-center {
+      width: 58.1rem;
+      height: 35.8rem;
+      margin-top: 6rem;
+    }
+
+    .p-single-list {
+      width: 71.4rem;
+      margin-top: 6.1rem;
+      margin-left: 5rem;
+    }
+
+    .p-single-button-wrapper {
+      width: 71.4rem;
+    }
+
+    .p-button.single {
+      width: 42.9rem;
+      padding: 4.2rem 0 3.8rem;
+      color: $color--darkGray;
+      border-radius: 2rem;
+    }
+
+    .p-single-bold {
+      width: 71.4rem;
+      margin-top: 6rem;
+      margin-bottom: 14.9rem;
+    }
+  }
+
+  // page.html
+
+  .p-main-title.page {
+    background: url(../img/page-shop-about.jpg) center / cover;
+    height: 50.5rem;
+
+    h1 {
+      font-size: 6rem;
+      margin-left: 8.6rem;
+    }
+  }
+
+}
+
+@include breakpoint(pc) {
+  .l-main {
+    grid-area: main;
+  }
+  
+  .p-main-title {
+    height: calc(530px * (155.3rem / 1553px));
+    background-image: url(../img/mainvisual-pc.jpg);
+  
+    h2 {
+      font-size: 4rem;
+      margin-left: per(86, 1553);
+    }
+  }
+
+  .p-main-title.archive {
+    display: flex;
+    height: 23.9rem;
+    background-image: url(../img/mainvisual-three-burger.jpg);
+    background-position-y: -86rem;
+
+    h2 {
+      margin-left: per(86, 1553);
+    }
+  }
+
+  .p-burger-information {
+    
+    .p-burger-information-text {
+      width: per(1353, 1553);
+      padding-top: per(63, 1553);
+    }
+  }
+
+  // single.html
+
+  .p-main-title.single {
+    height: 50rem;
+  }
+
+  .p-single-main-contents-wrapper {
+
+    .p-main-headline {
+
+      h2 {
+        margin-top: 6.3rem;
+      }
+
+       p {
+        width: 135.3rem;
+        margin-top: 5.7rem;
+       }
+
+       h3 {
+        margin-top: 6rem;
+       }
+
+       h4,
+       h5,
+       h6 {
+        margin-top: 5.6rem;
+       }
+    }
+
+    article {
+      width: 135.3rem;
+    }
+
+    .p-single-contents {
+
+      img {
+        width: auto;
+        height: auto;
+      }
+
+      p {
+        width: 73.3rem;
+        margin-left: 4rem;
+      }
+    }
+
+    .p-single-contents:nth-of-type(2) {
+
+      p {
+        margin: 0;
+        margin-right: 4rem;
+      }
+    }
+
+    img.p-single-image-center {
+      width: auto;
+      height: auto;
+    }
+
+    .p-single-list {
+      width: 135.3rem;
+      margin-top: 5.4rem;
+
+      ol:nth-of-type(2),
+      ul:nth-of-type(2) {
+        margin: 1.7rem 0 1.7rem 5rem;
+      }
+    }
+
+    .p-single-button-wrapper {
+      width: 135.3rem;
+    }
+
+    .p-single-bold {
+      width: 135.3rem;
+      margin-bottom: 27.4rem;
+    }
+  }
+}
