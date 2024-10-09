@@ -2,7 +2,7 @@
 @use '../../foundation/color' as *;
 @use '../../foundation/mixin' as *;
 
-table.p-single-table {
+.p-single-table {
   width: 33.5rem;
   margin-top: 3rem;
   border-collapse: collapse;
@@ -23,7 +23,7 @@ table.p-single-table {
 }
 
 @include breakpoint(tablet) {
-  table.p-single-table {
+  .p-single-table {
     width: 71.4rem;
     margin-top: 6rem;
   
@@ -38,7 +38,7 @@ table.p-single-table {
 }
 
 @include breakpoint(pc) {
-  table.p-single-table {
+  .p-single-table {
     width: 135.3rem;
     margin-top: 5rem;
 

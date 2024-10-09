@@ -2,7 +2,7 @@
 @use '../../foundation/color' as *;
 @use '../../foundation/mixin' as *;
 
-.p-image-grid {
+.p-image-grid > div {
   display: grid;
   width: 33.5rem;
   grid-template-columns: 1fr;
@@ -16,7 +16,7 @@
 }
 
 @include breakpoint(tablet) {
-  .p-image-grid {
+  .p-image-grid > div {
     width: 71.4rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -30,7 +30,7 @@
 }
 
 @include breakpoint(pc) {
-  .p-image-grid {
+  .p-image-grid > div {
     width: 135.3rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

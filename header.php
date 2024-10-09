@@ -16,10 +16,7 @@
   <div class="container">
     <header class="l-header">
       <h1><a href="<?php echo home_url('') ?>"><?php bloginfo('name'); ?></a></h1>
-      <div class="p-search-box">
-        <input type="text">
-        <button class="p-button search">検索</button>
-      </div>
+      <?php get_search_form() ?>
       <div class="p-header-menu">
         <p>Menu</p>
       </div>

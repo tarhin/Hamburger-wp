@@ -117,7 +117,7 @@
       line-height: 2.376rem;
     }
 
-    a {
+    a.button {
       display: block;
       text-decoration: none;
       color: $color--gray;
@@ -145,6 +145,10 @@
   color: $color--darkGray;
   font-size: 1.6rem;
   font-family: "M PLUS 1p";
+
+  p {
+    width: auto;
+  }
 }
 
 .p-main-box--gray.citation {
@@ -226,7 +230,7 @@
         width: 28.4rem;
       }
 
-      a {
+      a.button {
         margin: 4.5rem auto 4rem;
       }
     }
@@ -360,7 +364,7 @@
         width: per(509, 676);
       }
 
-      a {
+      a.button {
         width: per(292, 676);
         height: 7.6rem;
         line-height: 7.6rem;

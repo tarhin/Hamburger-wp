@@ -2,27 +2,66 @@
 @use '../../foundation/color' as *;
 @use '../../foundation/mixin' as *;
 
-.p-archive-pagination {
-  display: none;
-
-  p {
-    font-family: "Roboto";
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: $color--gray;
-  }
+.wp-pagenavi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: per(334, 375);
+  height: 2.2rem;
+  margin-bottom: per(30, 375);
 
   .fa-thin.fa-angles-left,
   .fa-thin.fa-angles-right {
     font-size: 1.6rem;
-    margin-left: 1.9rem;
   }
 
-  .p-pagination-list {
-    display: flex;
-    list-style-type: none;
+  a,span {
+    visibility: hidden;
+  }
 
-    li {
+  .previouspostslink,
+  .nextpostslink {
+    border: none;
+    display: flex;
+    align-items: center;
+    visibility: visible;
+  }
+
+  .previouspostslink::after {
+    content: "前へ";
+    margin-left: .8rem;
+    font-family: "M PLUS 1p";
+    font-size: 1.6rem;
+    color: $color--gray;
+  }
+
+  .nextpostslink::before {
+    content: "次へ";
+    margin-right: .8rem;
+    font-family: "M PLUS 1p";
+    font-size: 1.6rem;
+    color: $color--gray;
+  }
+}
+
+@include breakpoint(tablet) {
+  .wp-pagenavi {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: per(32, 834);
+  
+    .fa-thin.fa-angles-right,
+    .fa-thin.fa-angles-left {
+      font-size: 1.6rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    a, span {
       border: .1rem $color--gray solid;
       width: 3.5rem;
       height: 3.5rem;
@@ -31,108 +70,35 @@
       font-family: "Roboto";
       color: $color--gray;
       text-align: center;
+      padding: 0;
+      margin: 0;
       margin-left: 1.5rem;
+      cursor: pointer;
+      visibility: visible;
     }
 
-    li:nth-of-type(1) {
+    span {
       background-color: $color--darkGray;
       color:  white;
     }
-  }
-}
 
-.p-archive-pagination-sp {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: per(334, 375);
-  height: 2.2rem;
-  margin-bottom: per(30, 375);
-
-  p {
-    font-family: "M PLUS 1p";
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: $color--gray;
-  }
-
-  .fa-thin.fa-angles-left,
-  .fa-thin.fa-angles-right {
-    font-size: 1.6rem;
-  }
-}
-
-.p-archive-pagination-sp-back,
-.p-archive-pagination-sp-next {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.p-archive-pagination-sp-back {
-  p {
-    margin-left: .8rem;
-  }
-}
-
-.p-archive-pagination-sp-next {
-  p {
-    margin-right: .8rem;
-  }
-}
-
-@include breakpoint(tablet) {
-  .p-archive-pagination {
-    display: flex;
-    height: 3.5rem;
-    align-items: center;
-    margin-bottom: per(32, 834);
-  
-    p {
-      font-family: "Roboto";
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: $color--gray;
+    a.previouspostslink,
+    a.nextpostslink {
+      border: none;
     }
-  
-    .fa-thin.fa-angles-left,
-    .fa-thin.fa-angles-right {
-      font-size: 1.6rem;
-      margin-left: 1.9rem;
-      cursor: pointer;
+
+    a.previouspostslink::after {
+      display: none;
     }
-  
-    .p-pagination-list {
-      display: flex;
-      list-style-type: none;
-  
-      li {
-        border: .1rem $color--gray solid;
-        width: 3.5rem;
-        height: 3.5rem;
-        line-height: 3.5rem;
-        font-size: 1.6rem;
-        font-family: "Roboto";
-        color: $color--gray;
-        text-align: center;
-        margin-left: 1.5rem;
-        cursor: pointer;
-      }
-  
-      li:nth-of-type(1) {
-        background-color: $color--darkGray;
-        color:  white;
-      }
+
+    a.nextpostslink::before {
+      display: none;
     }
-  }
-  
-  .p-archive-pagination-sp {
-    display: none;
   }
 }
 
 @include breakpoint(pc) {
-  .p-archive-pagination {
+  .wp-pagenavi {
     margin-bottom: per(64, 1553);
   }
 }
