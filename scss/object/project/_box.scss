@@ -62,7 +62,11 @@
     font-size: 2.2rem;
   }
 
-  p {
+  ul {
+    list-style-type: none;
+  }
+
+  li {
     font-size: 1.6rem;
     font-weight: 400;
     padding: per(8, 303) per(16, 303) per(16, 303) per(16, 303);
@@ -200,7 +204,7 @@
       padding-left: per(16, 325);
     }
 
-    p {
+    li {
       padding: per(16, 325);
       font-size: 1.4rem;
     }
@@ -318,8 +322,12 @@
       padding-top: per(16, 584);
       padding-left: per(16, 584);
     }
+
+    ul {
+      list-style-type: none;
+    }
   
-    p {
+    li {
       font-size: 1.6rem;
       line-height: 2.376rem;
       padding: per(10, 584) per(16, 584) per(21, 584);

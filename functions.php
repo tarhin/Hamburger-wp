@@ -94,6 +94,19 @@ function hamburger_widgets_mapbox() {
 
 add_action('widgets_init','hamburger_widgets_mapbox');
 
+function mytheme_widgets_footer() {
+  // フッターウィジェットエリアの登録
+  register_sidebar( array(
+      'name'          => 'フッターウィジェットエリア', // 管理画面で表示される名前
+      'id'            => 'footer_widget',  // ウィジェットエリアのID
+      'before_widget' => '',  // 各ウィジェットの前に挿入されるHTML
+      'after_widget'  => '', // 各ウィジェットの後に挿入されるHTML
+      'before_title'  => '<p>', // ウィジェットタイトルの前に挿入されるHTML
+      'after_title'   => '</p>', // ウィジェットタイトルの後に挿入されるHTML
+  ) );
+}
+add_action( 'widgets_init', 'mytheme_widgets_footer' );
+
 // フィルター実装
 
 function my_custom_widget_args ($args) {
