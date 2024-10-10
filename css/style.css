@@ -867,25 +867,24 @@ body {
 .c-sidebar-contents .p-menu-close::after {
   transform: rotate(135deg);
 }
-.c-sidebar-contents h4 {
-  font-family: "M PLUS 1p";
-  font-weight: bold;
-  font-size: 2.4rem;
-  color: #707070;
-  margin: 10.6666666667% 0;
-}
-.c-sidebar-contents h4:nth-of-type(1) {
-  margin-top: 35.7333333333%;
-}
-.c-sidebar-contents ul {
-  margin-left: 5.3333333333%;
-}
 .c-sidebar-contents ul li {
   font-family: "M PLUS 1p";
   font-size: 2rem;
   font-weight: 400;
   color: #707070;
+  padding-left: 5.3333333333%;
   padding-bottom: 5.3333333333%;
+}
+.c-sidebar-contents ul .menu-item-object-category {
+  font-family: "M PLUS 1p";
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #707070;
+  margin: 10.6666666667% 0;
+  padding: 0;
+}
+.c-sidebar-contents ul.menu:nth-of-type(1) .menu-item-object-category {
+  margin-top: 35.7333333333%;
 }
 .c-sidebar-contents ul:last-child {
   padding-bottom: 50rem;
@@ -911,10 +910,10 @@ body {
     top: 50%;
     right: 0;
   }
-  .c-sidebar-contents h4 {
+  .c-sidebar-contents .menu-item-object-category {
     margin: 13.0790190736% 0 8.719346049%;
   }
-  .c-sidebar-contents h4:nth-of-type(1) {
+  .c-sidebar-contents ul.menu:nth-of-type(1) .menu-item-object-category {
     margin-top: 32.970027248%;
   }
 }
@@ -939,22 +938,26 @@ body {
     min-height: 245.5rem;
   }
   .c-sidebar-contents {
-    padding-left: 12.5% h4;
-    padding-left-font-size: 2.4rem;
-    padding-left-margin: 9.5108695652% 0;
-  }
-  .c-sidebar-contents h4:nth-of-type(1) {
-    margin-top: 0;
-  }
-  .c-sidebar-contents ul {
-    margin-left: 5.4347826087%;
+    padding-left: 12.5%;
   }
   .c-sidebar-contents ul li {
     font-family: "M PLUS 1p";
     font-size: 2rem;
     font-weight: 400;
     color: #707070;
+    padding-left: 5.4347826087%;
     padding-bottom: 5.4347826087%;
+  }
+  .c-sidebar-contents ul .menu-item-object-category {
+    font-size: 2.4rem;
+    margin: 9.5108695652% 0;
+    padding: 0;
+  }
+  .c-sidebar-contents ul.menu:nth-of-type(1) .menu-item-object-category {
+    margin-top: 0;
+  }
+  .c-sidebar-contents h4:nth-of-type(1) {
+    margin-top: 0;
   }
   .p-sp-menu-background {
     display: none;
@@ -1113,6 +1116,17 @@ body {
   background-image: url(../img/mainvisual-burger-potato.jpg);
 }
 
+.p-box-contents {
+  position: relative;
+}
+.p-box-contents a.p-box-contents-link {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+}
+
 .p-box-contents-text {
   width: 90.447761194%;
   box-sizing: border-box;
@@ -1128,10 +1142,7 @@ body {
   font-weight: 700;
   font-size: 2.2rem;
 }
-.p-box-contents-text ul {
-  list-style-type: none;
-}
-.p-box-contents-text li {
+.p-box-contents-text p {
   font-size: 1.6rem;
   font-weight: 400;
   padding: 2.6402640264% 5.2805280528% 5.2805280528% 5.2805280528%;
@@ -1247,7 +1258,7 @@ body {
     padding-top: 4.9230769231%;
     padding-left: 4.9230769231%;
   }
-  .p-box-contents-text li {
+  .p-box-contents-text p {
     padding: 4.9230769231%;
     font-size: 1.4rem;
   }
@@ -1338,10 +1349,7 @@ body {
     padding-top: 2.7397260274%;
     padding-left: 2.7397260274%;
   }
-  .p-box-contents-text ul {
-    list-style-type: none;
-  }
-  .p-box-contents-text li {
+  .p-box-contents-text p {
     font-size: 1.6rem;
     line-height: 2.376rem;
     padding: 1.7123287671% 2.7397260274% 3.595890411%;

@@ -20,6 +20,28 @@ function custom_theme_support() {
 
 add_action('after_setup_theme', 'custom_theme_support');
 
+// カスタム投稿タイプ実装
+
+function create_post_type() {
+  register_post_type('service', 
+  array(
+    'labels' => array(
+      'name'          => __('サービス'), // 管理画面の投稿タイプ名
+      'singular_name' => __('サービス')   // 個別の投稿名)
+    ),
+    'public'             => true, // 投稿タイプを公開する
+    'has_archive'        => true, // アーカイブページを有効にする
+    'rewrite'            => array('slug' => 'services'), // URLに使うスラッグ
+    'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'), // サポートする機能
+    'show_in_rest'       => true, // ブロックエディタ（Gutenberg）を有効にする
+    'menu_position'      => 5,    // 管理画面のメニューの位置
+    'menu_icon'          => 'dashicons-admin-tools', // 管理画面のアイコン
+    'taxonomies'         => array('post_tag')
+  ));
+}
+
+add_action('init', 'create_post_type');
+
 // ウィジェット実装
 
 function hamburger_widgets_init() {

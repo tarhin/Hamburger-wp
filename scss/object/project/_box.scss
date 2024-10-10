@@ -46,6 +46,18 @@
   background-image: url(../img/mainvisual-burger-potato.jpg);
 }
 
+.p-box-contents {
+  position: relative;
+
+  a.p-box-contents-link {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+  }
+}
+
 .p-box-contents-text {
   width: per(303, 335);
   box-sizing: border-box;
@@ -62,11 +74,7 @@
     font-size: 2.2rem;
   }
 
-  ul {
-    list-style-type: none;
-  }
-
-  li {
+  p {
     font-size: 1.6rem;
     font-weight: 400;
     padding: per(8, 303) per(16, 303) per(16, 303) per(16, 303);
@@ -204,7 +212,7 @@
       padding-left: per(16, 325);
     }
 
-    li {
+    p {
       padding: per(16, 325);
       font-size: 1.4rem;
     }
@@ -322,12 +330,8 @@
       padding-top: per(16, 584);
       padding-left: per(16, 584);
     }
-
-    ul {
-      list-style-type: none;
-    }
   
-    li {
+    p {
       font-size: 1.6rem;
       line-height: 2.376rem;
       padding: per(10, 584) per(16, 584) per(21, 584);

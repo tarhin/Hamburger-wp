@@ -11,15 +11,32 @@
           </div>
           <div class="p-box-contents">
             <?php
-            if ( is_active_sidebar( 'textbox1_widget' ) ) :
-                dynamic_sidebar( 'textbox1_widget' );
-            else:
-            ?>
-            <div class="widget">
-              <h2>No Widget</h2>
-              <p>ウィジットは設定されていません。</p>
-            </div>
+            // カスタム投稿タイプserviceを取得
+            $args = array(
+              'post_type' => 'service', // カスタム投稿タイプの指定
+              'tag' => 'takeout', // このタグの投稿を表示
+              'post_per_page' => '1' // 表示する投稿数
+            );
+            $custom_query = new WP_query($args); ?>
+
+            <?php if($custom_query->have_posts()) :?>
+              <?php while($custom_query->have_posts()): $custom_query->the_post(); ?>
+              <a href="<?php the_permalink(); ?>" class="p-box-contents-link"></a>
+              <div class="p-box-contents-text">
+                <h4><?php the_title(); ?></h4>
+                <?php the_excerpt(); ?>
+              </div>
+              <div class="p-box-contents-text">
+                <h4><?php the_title(); ?></h4>
+                <?php the_excerpt(); ?>
+              </div>
+              <?php endwhile; ?>
+            <?php else : ?>
+              <p>何も表示されませんでした。</p>
             <?php endif; ?>
+
+            <?php wp_reset_postdata(); ?>
+
           </div>
         </div>
         <div class="p-box--information">
@@ -29,15 +46,30 @@
           </div>
           <div class="p-box-contents">
             <?php
-            if ( is_active_sidebar( 'textbox2_widget' ) ) :
-                dynamic_sidebar( 'textbox2_widget' );
-            else:
-            ?>
-            <div class="widget">
-              <h2>No Widget</h2>
-              <p>ウィジットは設定されていません。</p>
-            </div>
+            $args = array(
+              'post_type' => 'service', // カスタム投稿タイプの指定
+              'tag' => 'eatin', // このタグの投稿を表示
+              'post_per_page' => '1' // 表示する投稿数
+            );
+            $custom_query = new WP_query($args); ?>
+
+            <?php if($custom_query->have_posts()) :?>
+              <?php while($custom_query->have_posts()): $custom_query->the_post(); ?>
+              <a href="<?php the_permalink(); ?>" class="p-box-contents-link"></a>
+              <div class="p-box-contents-text">
+                <h4><?php the_title(); ?></h4>
+                <?php the_excerpt(); ?>
+              </div>
+              <div class="p-box-contents-text">
+                <h4><?php the_title(); ?></h4>
+                <?php the_excerpt(); ?>
+              </div>
+              <?php endwhile; ?>
+            <?php else : ?>
+              <p>何も表示されませんでした。</p>
             <?php endif; ?>
+
+            <?php wp_reset_postdata(); ?>
           </div>
         </div>
       </div>

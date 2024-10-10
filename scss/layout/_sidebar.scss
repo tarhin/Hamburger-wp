@@ -102,26 +102,30 @@
     transform: rotate(135deg);
   }
 
-  h4 {
-    font-family: "M PLUS 1p";
-    font-weight: bold;
-    font-size: 2.4rem;
-    color: $color--gray;
-    margin: per(40, 375) 0;
-  }
-
-  h4:nth-of-type(1) {
-    margin-top: per(134, 375);
-  }
-
   ul {
-    margin-left: per(20, 375);
+    
     li {
       font-family: "M PLUS 1p";
       font-size: 2rem;
       font-weight: 400;
       color: $color--gray;
+      padding-left: per(20, 375);
       padding-bottom: per(20, 375);
+    }
+
+    .menu-item-object-category {
+      font-family: "M PLUS 1p";
+      font-weight: bold;
+      font-size: 2.4rem;
+      color: $color--gray;
+      margin: per(40, 375) 0;
+      padding: 0;
+    }
+  }
+
+  ul.menu:nth-of-type(1) {
+    .menu-item-object-category {
+      margin-top: per(134, 375);
     }
   }
 
@@ -155,12 +159,14 @@
       right: 0;
     }
 
-    h4 {
+    .menu-item-object-category {
       margin: per(48, 367) 0 per(32, 367);
     }
 
-    h4:nth-of-type(1) {
-      margin-top: per(121, 367);
+    ul.menu:nth-of-type(1) {
+      .menu-item-object-category {
+        margin-top: per(121, 367);
+      }
     }
   }
 }
@@ -189,24 +195,29 @@
   }
   
   .c-sidebar-contents {
-    padding-left: per(46, 368)
-    h4 {
-      font-size: 2.4rem;
-      margin: per(35, 368) 0;
-    }
-
-    h4:nth-of-type(1) {
-      margin-top: 0;
-    }
+    padding-left: per(46, 368);
 
     ul {
-      margin-left: per(20, 368);
+      
       li {
         font-family: "M PLUS 1p";
         font-size: 2rem;
         font-weight: 400;
         color: $color--gray;
+        padding-left: per(20, 368);
         padding-bottom: per(20, 368);
+      }
+
+      .menu-item-object-category {
+        font-size: 2.4rem;
+        margin: per(35, 368) 0;
+        padding: 0;
+      }
+    }
+
+    ul.menu:nth-of-type(1) {
+      .menu-item-object-category {
+        margin-top: 0;
       }
     }
   }
