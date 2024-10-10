@@ -26,8 +26,8 @@ function create_post_type() {
   register_post_type('service', 
   array(
     'labels' => array(
-      'name'          => __('サービス'), // 管理画面の投稿タイプ名
-      'singular_name' => __('サービス')   // 個別の投稿名)
+      'name'          => __('サービス', 'Hamburger'), // 管理画面の投稿タイプ名
+      'singular_name' => __('サービス', 'Hamburger')   // 個別の投稿名)
     ),
     'public'             => true, // 投稿タイプを公開する
     'has_archive'        => true, // アーカイブページを有効にする

@@ -1600,7 +1600,7 @@ body {
     cursor: pointer;
     visibility: visible;
   }
-  .wp-pagenavi span {
+  .wp-pagenavi span.current {
     background-color: #3C2A10;
     color: white;
   }

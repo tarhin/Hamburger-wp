@@ -1,9 +1,9 @@
 <?php get_header(); ?>
     <main class="l-main">
-      <div class="p-main-title archive">
+      <div class="p-main-title archive search">
         <div class="p-main-title-bg">
           <h2>Menu:</h2>
-          <p>カテゴリ</p>
+          <p><?php echo esc_html(single_cat_title()); ?></p>
         </div>
       </div>
       <article class="p-burger-information">
