@@ -1,0 +1,77 @@
+@use '../../foundation/base' as *;
+@use '../../foundation/color' as *;
+@use '../../foundation/mixin' as *;
+
+.page-404-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-family: "Roboto";
+    font-size: 4rem;
+    margin-top: 4rem;
+  }
+
+  h3 {
+    font-family: "Roboto";
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+
+  p {
+    font-family: "M PLUS 1p";
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  a.p-button.page-404 {
+    display: block;
+    padding:1.6rem;
+    margin-top: 4rem;
+    font-size: 1rem;
+  }
+}
+
+@include breakpoint(tablet) {
+  .page-404-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-size: 8rem;
+      margin-top: 6rem;
+    }
+
+    h3 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    a.p-button.page-404 {
+      padding: 2.4rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+@include breakpoint(pc) {
+  .page-404-wrapper {
+  
+    h2 {
+      font-size: 10rem;
+      margin-top: 10rem;
+    }
+  
+    h3 {
+      font-size: 5rem;
+      margin-top: 2rem;
+    }
+  }
+}
