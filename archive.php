@@ -19,8 +19,7 @@
             <?php the_post_thumbnail(); ?>
             <div class="p-box-text-burger">
               <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-              <h4>小見出しが入ります</h4>
-              <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+              <p><?php the_excerpt(); ?></p>
               <a href="<?php the_permalink(); ?>" class="button">詳しく見る</a>
             </div>
           </div>
