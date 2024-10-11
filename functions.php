@@ -187,7 +187,7 @@ function hamburger_script() {
   $locale = get_locale();
   $locale = apply_filters('theme_locale', $locale, 'Hamburger');
   if ($locale == 'ja') {
-    wp_enqueue_style('hamburger-mplus1p', 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Roboto:wght@700&display=swap');
+    wp_enqueue_style('hamburger-mplus1p', 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Roboto:wght@700&display=swap', array(), null);
   }
   wp_enqueue_style('hamburger-Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
   wp_enqueue_style('hamburger-css', get_stylesheet_directory_uri().'/css/style.css');
